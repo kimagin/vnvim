@@ -42,3 +42,6 @@ vim.api.nvim_set_keymap("n", "<leader>fp", "<Cmd>:Telescope projects<CR>", { nor
 -- Unregister ciw from the clipboard
 vim.api.nvim_set_keymap("n", "c", '"_c', { noremap = true, silent = true })
 vim.api.nvim_set_keymap("v", "d", '"_d', { noremap = true, silent = true })
+
+-- Running Python
+map("n", "<leader>pr", "<cmd>:split term://python3 %<CR>", { noremap = true, desc = "Run Python" })
