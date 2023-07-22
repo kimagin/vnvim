@@ -45,7 +45,7 @@ vim.api.nvim_set_keymap("v", "d", '"_d', { noremap = true, silent = true })
 
 -- Running Python
 map("n", "<leader>pr", "<cmd>:split term://python3 %<CR>", { desc = "Run Python" })
-map("n", "<leader>pn", "<cmd>:split term://nodemon --exec 'python3' % -q<CR>", { desc = "Run Nodemon" })
+map("n", "<leader>pn", "<cmd>:belowright 20split term://nodemon --exec 'python3' % -q<CR>", { desc = "Run Nodemon" })
 
 -- Buffer
 map("n", "q", "<cmd>bd<CR>", { noremap = true, desc = "Delete Current Buffer" })
