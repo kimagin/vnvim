@@ -1,4 +1,4 @@
 return {
-  --HACK: NOICE,
+  --PERF: NOICE,
   { "folke/noice.nvim", enabled = false },
 }
