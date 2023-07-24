@@ -44,9 +44,21 @@ vim.api.nvim_set_keymap("n", "c", '"_c', { noremap = true, silent = true })
 vim.api.nvim_set_keymap("v", "d", '"_d', { noremap = true, silent = true })
 
 -- Running Python
-map("n", "<leader>pr", "<cmd>:split term://python3 %<CR>", { desc = "Run Python" })
-map("n", "<leader>pn", "<cmd>:belowright 20split term://nodemon --exec 'python3' % -q<CR>", { desc = "Run Nodemon" })
+map("n", "<leader>pp", "<cmd>:split term://python3 %<CR>", { desc = "Run Python" })
+map(
+  "n",
+  "<leader>np",
+  "<cmd>:belowright 20split term://nodemon --exec 'python3' % -q<CR>",
+  { desc = "Run Nodemon [Python]" }
+)
 
+-- Running JS
+map(
+  "n",
+  "<leader>nj",
+  "<cmd>:belowright 20split term://nodemon --exec 'nodemon' % -q<CR>",
+  { desc = "Run Nodemon [Java Script]" }
+)
 -- Buffer
 map("n", "q", "<cmd>bd<CR>", { noremap = true, desc = "Delete Current Buffer" })
 map("n", "<leader>ww", "<cmd>:w<CR>", { noremap = true, desc = "Save Current Buffer" })
