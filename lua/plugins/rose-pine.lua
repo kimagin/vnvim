@@ -13,9 +13,9 @@ return {
         -- background = "iris",
       },
       highlight_groups = {
-        MiniIndentscopeSymbol = { fg = "#5248c7" },
-        Pmenu = { bg = "#470a69", blend = 20 },
-        PmenuSel = { bg = "#470a69", blend = 50 },
+        MiniIndentscopeSymbol = { fg = "#6b3e21" },
+        Pmenu = { bg = "#2e5952", blend = 90 },
+        PmenuSel = { bg = "#417f75", blend = 90 },
       },
     },
   },

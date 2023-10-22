@@ -62,12 +62,32 @@ return {
     end,
   },
   --HACK: INDENT-BLANKLINE
+
   {
     "lukas-reineke/indent-blankline.nvim",
-    event = { "BufReadPost", "BufNewFile" },
+    event = "LazyFile",
     opts = {
-      char = "",
+      indent = {
+        char = "",
+        tab_char = "│",
+      },
+      scope = { enabled = false },
+      exclude = {
+        filetypes = {
+          "help",
+          "alpha",
+          "dashboard",
+          "neo-tree",
+          "Trouble",
+          "lazy",
+          "mason",
+          "notify",
+          "toggleterm",
+          "lazyterm",
+        },
+      },
     },
+    main = "ibl",
   },
   --HACK: MINI-INDENTOSCOPE
   {
