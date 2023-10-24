@@ -4,7 +4,7 @@ return {
   opts = function()
     local icons = require("lazyvim.config").icons
     local Util = require("lazyvim.util")
-    local rose = require("lualine.themes.rose-pine")
+    local rose = require("lualine.themes.terafox")
     rose.normal.c.bg = "#00000000"
 
     return {
