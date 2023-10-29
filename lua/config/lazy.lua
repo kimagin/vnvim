@@ -10,14 +10,14 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 -- vim.cmd("autocmd BufNewFile,BufRead *.astro set filetype=astro")
 vim.cmd("nnoremap q <Nop>")
 vim.cmd("nnoremap qq <Nop>")
-vim.opt.laststatus = 5
+vim.opt.laststatus = 3
 vim.opt.splitkeep = "screen"
 
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins", opts = {
-      colorscheme = "terafox",
+      colorscheme = "nightfox",
     } },
     -- import any extras modules here
     { import = "lazyvim.plugins.extras.lang.typescript" },

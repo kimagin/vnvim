@@ -1,10 +1,11 @@
 return {
   {
-    "EdenEast/nightfox.nvim",
+    "oxalica/nightfox.nvim",
     opts = {
-      fox = "terafox",
       transparent = true,
+      terminal_colors = true,
       styles = {
+
         sidebars = "transparent",
         floats = "transparent",
       },

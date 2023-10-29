@@ -3,64 +3,6 @@ return {
   { "rcarriga/nvim-notify", opts = {
     background_color = "#280e32",
   } },
-  --HACK: EDGY
-  {
-    "folke/edgy.nvim",
-    event = "VeryLazy",
-    opts = function()
-      local opts = {
-        animate = { enabled = false },
-        bottom = {
-          {
-            ft = "lazyterm",
-            title = "Terminal",
-            size = { height = 0.4 },
-            filter = function(buf)
-              return not vim.b[buf].lazyterm_cmd
-            end,
-          },
-          "Trouble",
-          { ft = "qf", title = "QuickFix" },
-          {
-            ft = "help",
-            size = { height = 30 },
-            -- don't open help files in edgy that we're editing
-            filter = function(buf)
-              return vim.bo[buf].buftype == "help"
-            end,
-          },
-          { ft = "spectre_panel", size = { height = 0.4 } },
-          { title = "Neotest Output", ft = "neotest-output-panel", size = { height = 15 } },
-        },
-        left = {
-          {
-            title = "Neo-Tree",
-            ft = "neo-tree",
-            filter = function(buf)
-              return vim.b[buf].neo_tree_source == "filesystem"
-            end,
-            pinned = true,
-            open = function()
-              vim.api.nvim_input("<esc><space>e")
-            end,
-            size = { height = 0.5 },
-          },
-
-          "neo-tree",
-        },
-      }
-      local Util = require("lazyvim.util")
-      if Util.has("symbols-outline.nvim") then
-        table.insert(opts.left, {
-          title = "Outline",
-          ft = "Outline",
-          pinned = true,
-          open = "SymbolsOutline",
-        })
-      end
-      return opts
-    end,
-  },
   --HACK: INDENT-BLANKLINE
 
   {
@@ -103,6 +45,9 @@ return {
   {
     "nvim-neo-tree/neo-tree.nvim",
     opts = {
+      view = {
+        width = 20,
+      },
       popup_border_style = "rounded",
       filesystem = {
         filtered_items = {
@@ -182,8 +127,10 @@ return {
       servers = {
         -- pyright will be automatically installed with mason and loaded with lspconfig
         -- pyright = {},
-        pylsp = {},
-        ruff_lsp = {},
+        -- pylsp = {},
+        -- ruff_lsp = {},
+        astro = {},
+        tsserver = {},
         emmet_ls = {},
       },
     },
