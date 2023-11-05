@@ -1,8 +1,14 @@
 return {
   -- HACK: NOTIFY
-  { "rcarriga/nvim-notify", opts = {
-    background_color = "#280e32",
-  } },
+  {
+    "rcarriga/nvim-notify",
+    opts = {
+      background_color = "#280e32",
+
+      -- Make the notification on bottom
+      top_down = false,
+    },
+  },
   --HACK: INDENT-BLANKLINE
 
   {
@@ -38,6 +44,10 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     opts = {
       symbol = "│",
+      draw = {
+        delay = 0,
+        animation = require("mini.indentscope").gen_animation.none(),
+      },
       options = { try_as_border = true },
     },
   },
@@ -45,9 +55,10 @@ return {
   {
     "nvim-neo-tree/neo-tree.nvim",
     opts = {
-      view = {
-        width = 20,
+      window = {
+        width = 30,
       },
+
       popup_border_style = "rounded",
       filesystem = {
         filtered_items = {
@@ -125,6 +136,8 @@ return {
       },
       ---@type lspconfig.options
       servers = {
+        eslint = {},
+        lua_ls = {},
         -- pyright will be automatically installed with mason and loaded with lspconfig
         -- pyright = {},
         -- pylsp = {},
