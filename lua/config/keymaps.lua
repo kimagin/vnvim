@@ -30,14 +30,8 @@ map("n", "<Tab>", "<cmd>:bn<CR>", { desc = "Move Tabs to right" })
 
 map("n", "<S-Tab>", "<cmd>:bp<CR>", { desc = "Move Tabs to left" })
 
--- Save and Quit
--- vim.keymap.set("n", "qq", function()
---   vim.cmd.w()
---   vim.cmd.quitall()
--- end)
-
 -- Telescope
-vim.api.nvim_set_keymap("n", "<leader>fp", "<Cmd>:Telescope projects<CR>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "<leader>fp", "<Cmd>:Telescope projects<CR>", { noremap = true, silent = true })
 
 -- Unregister ciw from the clipboard
 vim.api.nvim_set_keymap("n", "c", '"_c', { noremap = true, silent = true })
@@ -60,6 +54,6 @@ map(
   { desc = "Run Nodemon [Java Script]" }
 )
 -- Buffer
-map("n", "q", "<cmd>bd<CR>", { noremap = true, desc = "Delete Current Buffer" })
+map("n", "q", "<cmd>:w<CR> |<cmd>bd<CR>", { noremap = true, desc = "Delete Current Buffer" })
 map("n", "<leader>ww", "<cmd>:w<CR>", { noremap = true, desc = "Save Current Buffer" })
 map("n", "qq", "<cmd>:wa<CR> | <cmd>:qall!<CR>", { noremap = true, desc = "Save All and Quit" })

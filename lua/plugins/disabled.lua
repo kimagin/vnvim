@@ -4,4 +4,5 @@ return {
   --PERF: Lua Snip
   { "L3MON4D3/LuaSnip" },
   { "nvim-lualine/lualine.nvim" },
+  { "catppuccin/nvim" },
 }
