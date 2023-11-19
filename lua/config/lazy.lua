@@ -9,7 +9,7 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 --HACK: Conditionals
 -- vim.cmd("autocmd BufNewFile,BufRead *.astro set filetype=astro")
 vim.cmd("nnoremap q <Nop>")
-vim.cmd("nnoremap qq <Nop>")
+-- vim.cmd("nnoremap qq <Nop>")
 vim.opt.laststatus = 3
 vim.opt.splitkeep = "screen"
 
@@ -21,7 +21,7 @@ require("lazy").setup({
     } },
     -- import any extras modules here
     -- { import = "lazyvim.plugins.extras.lang.typescript" },
-    { import = "lazyvim.plugins.extras.lang.json" },
+    -- { import = "lazyvim.plugins.extras.lang.json" },
     -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
     -- { import = "lazyvim.plugins.extras.util.mini-hipatterns" },
     -- { import = "lazyvim.plugins.extras.dap.core" },
@@ -29,8 +29,8 @@ require("lazy").setup({
     -- { import = "lazyvim.plugins.extras.test.core" },
     -- { import = "lazyvim.plugins.extras.util.project" },
     -- { import = "lazyvim.plugins.extras.lang.python" },
-    { import = "lazyvim.plugins.extras.formatting.prettier" },
-    -- { import = "lazyvim.plugins.extras.linting.eslint" },
+    -- { import = "lazyvim.plugins.extras.formatting.prettier" },
+    -- { import = "lazyvim.plugins.extras.linting.eslint_d" },
     -- { import = "lazyvim.plugins.extras.lang.tailwind" },
     -- import/override with your plugins
     { import = "plugins" },

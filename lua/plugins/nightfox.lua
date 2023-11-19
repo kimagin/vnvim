@@ -1,6 +1,8 @@
 return {
   {
     "EdenEast/nightfox.nvim",
+
+    event = "VeryLazy",
     opts = {
       options = {
         transparent = true,
@@ -41,10 +43,10 @@ return {
       --   red = "#145000",
       -- },
     },
-    groups = {
-      nordfox = {
-        LazyNormal = { bg = "#11111b" },
-      },
-    },
+    -- groups = {
+    --   nordfox = {
+    --     LazyNormal = { bg = "#11111b" },
+    --   },
+    -- },
   },
 }

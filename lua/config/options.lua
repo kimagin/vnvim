@@ -25,3 +25,7 @@ opt.termguicolors = true
 opt.pumblend = 10
 opt.winblend = 0
 opt.fillchars = { eob = " " } --disable the ~
+
+-- Undercurl
+-- vim.cmd([[let &t_Cs = "\e[4:3m]"]])
+-- vim.cmd([[let &t_Ce = "\e[4:3m]"]])

@@ -117,12 +117,27 @@ return {
   --HACK: TREESITTER
   {
     "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    event = { "BufReadPre", "BufNewFile" },
     opts = function(_, opts)
       -- add tsx and treesitter
       vim.list_extend(opts.ensure_installed, {
         "tsx",
+        "javascript",
+        "css",
         "typescript",
         "python",
+        "html",
+        "lua",
+        "luadoc",
+        "json",
+        "jsonc",
+        "gitignore",
+        "markdown",
+        "markdown_inline",
+        "vim",
+        "yaml",
+        "glsl",
       })
     end,
   },
@@ -136,15 +151,29 @@ return {
       },
       ---@type lspconfig.options
       servers = {
-        eslint = {},
+        -- eslint = {
+        --   settings = {
+        --     workingDirectory = { mode = "auto" },
+        --   },
+        -- },
         lua_ls = {},
         -- pyright will be automatically installed with mason and loaded with lspconfig
         -- pyright = {},
         -- pylsp = {},
         -- ruff_lsp = {},
-        astro = {},
-        tsserver = {},
-        emmet_ls = {},
+        -- astro = {},
+        -- tsserver = {
+        --   filetypes = { "javascript", "typescript", "typescriptreact", "typescript.tsx" },
+        --   root_dir = function()
+        --     return vim.loop.cwd()
+        --   end,
+        -- },
+        html = {},
+        emmet_language_server = {},
+        jsonls = {},
+        -- quick_lint_js = {},
+
+        -- emmet_ls = {},
       },
     },
   },
