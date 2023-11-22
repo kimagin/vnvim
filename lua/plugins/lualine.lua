@@ -4,16 +4,16 @@ return {
   opts = function()
     local icons = require("lazyvim.config").icons
     local Util = require("lazyvim.util")
-    local rose = require("lualine.themes.nightfox")
-    rose.normal.c.bg = "#00000000"
+    local nightfox = require("lualine.themes.nightfox")
+    nightfox.normal.c.bg = "#00000000"
 
     return {
 
       options = {
-        theme = rose,
+        theme = nightfox,
         globalstatus = true,
         disabled_filetypes = { statusline = { "dashboard", "alpha" } },
-        -- component_separators = "|",
+        component_separators = "|",
         section_separators = { left = "", right = "" },
         always_divide_middle = true,
       },

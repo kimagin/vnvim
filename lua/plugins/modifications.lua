@@ -55,19 +55,28 @@ return {
   {
     "nvim-neo-tree/neo-tree.nvim",
     opts = {
+      close_if_last_window = true,
       window = {
         width = 30,
+        position = "left",
       },
 
-      popup_border_style = "rounded",
+      popup_border_style = "single",
+      open_files_do_not_replace_types = { "terminal", "trouble", "qf" },
+
       filesystem = {
         filtered_items = {
           -- hide_dotfiles = false,
+          visible = true,
           hide_by_name = {
             "node_modules",
           },
           always_show = { -- remains visible even if other settings would normally hide it
             ".env",
+            ".eslintrc.json",
+            ".eslintrc.js",
+            ".prettierrc.json",
+            ".prettierrc.js",
           },
         },
       },
@@ -76,7 +85,10 @@ return {
           folder_empty = "󰉖",
         },
       },
-      follow_current_file = false,
+
+      follow_current_file = {
+        enabled = true,
+      },
     },
   },
   --HACK:WEBDEV-ICONS
@@ -93,27 +105,27 @@ return {
     },
   },
   --HACK: MINI-BUFFERMOVE
-  {
-    "echasnovski/mini.bufremove",
-    keys = {
-      {
-        "<C-q>",
-        nowait = true,
-        noremap = false,
-        function()
-          require("mini.bufremove").delete(0, false)
-        end,
-        desc = "Delete Buffer",
-      },
-      {
-        "<C-Q",
-        function()
-          require("mini.bufremove").delete(0, false)
-        end,
-        desc = "Delete Buffer (Force)",
-      },
-    },
-  },
+  -- {
+  --   "echasnovski/mini.bufremove",
+  --   keys = {
+  --     {
+  --       "<C-q>",
+  --       nowait = true,
+  --       noremap = false,
+  --       function()
+  --         require("mini.bufremove").delete(0, false)
+  --       end,
+  --       desc = "Delete Buffer",
+  --     },
+  --     {
+  --       "<C-Q>",
+  --       function()
+  --         require("mini.bufremove").delete(0, false)
+  --       end,
+  --       desc = "Delete Buffer (Force)",
+  --     },
+  --   },
+  -- },
   --HACK: TREESITTER
   {
     "nvim-treesitter/nvim-treesitter",
