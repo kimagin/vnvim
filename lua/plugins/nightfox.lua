@@ -27,6 +27,7 @@ return {
           NotifyWARNTitle = { fg = "#c29452" },
           NotifyWARNIcon = { fg = "#c29452" },
           NotifyWARNTitle = { fg = "#c29452" },
+          NoiceCmdline = { bg = "#c29452" },
           -- DashboardHeader = { fg = "#5a90a2" },
           DashboardFooter = { fg = "#81b29a" },
         },
