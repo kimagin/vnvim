@@ -73,27 +73,27 @@ return {
   },
   --
   -- -- add telescope-fzf-native
-  -- {
-  --   "telescope.nvim",
-  --   dependencies = {
-  --     "nvim-telescope/telescope-fzf-native.nvim",
-  --     build = "make",
-  --     opts = {
-  --       extensions = {
-  --         fzf = {
-  --           fuzzy = true, -- false will only do exact matching
-  --           override_generic_sorter = true, -- override the generic sorter
-  --           override_file_sorter = true, -- override the file sorter
-  --           case_mode = "smart_case", -- or "ignore_case" or "respect_case"
-  --           -- the default case_mode is "smart_case"
-  --         },
-  --       },
-  --     },
-  --     config = function()
-  --       require("telescope").load_extension("fzf")
-  --     end,
-  --   },
-  -- },
+  {
+    "telescope.nvim",
+    dependencies = {
+      "nvim-telescope/telescope-fzf-native.nvim",
+      build = "make",
+      opts = {
+        extensions = {
+          fzf = {
+            fuzzy = true, -- false will only do exact matching
+            override_generic_sorter = true, -- override the generic sorter
+            override_file_sorter = true, -- override the file sorter
+            case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+            -- the default case_mode is "smart_case"
+          },
+        },
+      },
+      config = function()
+        require("telescope").load_extension("fzf")
+      end,
+    },
+  },
 
   -- add pyright to lspconfig
   -- {
@@ -143,6 +143,18 @@ return {
   --   },
   -- },
   --
+  {
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "stylua",
+        "shellcheck",
+        "shfmt",
+        "flake8",
+        "astro",
+      },
+    },
+  },
   -- for typescript, LazyVim also includes extra specs to properly setup lspconfig,
   -- treesitter, mason and typescript.nvim. So instead of the above, you can use:
   -- { import = "lazyvim.plugins.extras.lang.typescript" },
@@ -173,16 +185,16 @@ return {
   -- since `vim.tbl_deep_extend`, can only merge tables and not lists, the code above
   -- would overwrite `ensure_installed` with the new value.
   -- If you'd rather extend the default config, use the code below instead:
-  -- {
-  --   "nvim-treesitter/nvim-treesitter",
-  --   opts = function(_, opts)
-  --     -- add tsx and treesitter
-  --     vim.list_extend(opts.ensure_installed, {
-  --       "tsx",
-  --       "typescript",
-  --     })
-  --   end,
-  -- },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = function(_, opts)
+      -- add tsx and treesitter
+      vim.list_extend(opts.ensure_installed, {
+        "tsx",
+        "typescript",
+      })
+    end,
+  },
 
   -- the opts function can also be used to change the default opts:
   -- {
@@ -225,11 +237,10 @@ return {
 
   -- Use <tab> for completion and snippets (supertab)
   -- first: disable default <tab> and <s-tab> behavior in LuaSnip
+  -- { "rafamadriz/friendly-snippets" },
   -- {
   --   "L3MON4D3/LuaSnip",
-  --   keys = function()
-  --     return {}
-  --   end,
+  --   dependencies = { "rafamadriz/friendly-snippets" },
   -- },
   -- -- then: setup supertab in cmp
   -- {
