@@ -22,6 +22,6 @@ vim.g.clipboard = {
 local opt = vim.opt
 
 opt.termguicolors = true
-opt.pumblend = 10
+opt.pumblend = 0
 opt.winblend = 0
 opt.fillchars = { eob = " " } --disable the ~
