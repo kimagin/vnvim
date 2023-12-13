@@ -55,8 +55,8 @@ vim.api.nvim_set_keymap("v", "d", '"_d', { noremap = true, silent = true })
 --
 
 --PERF: Buffer
-map("n", "q", "[[:w<CR>:bdelete!<CR>]]", { noremap = true, silent = true, desc = "Delete Current Buffer" })
+map("n", "qq", "<cmd>:w | bdelete<CR>", { noremap = true, silent = true, desc = "Delete Current Buffer" })
 map("n", "<leader>ww", "<cmd>:w<CR>", { noremap = true, desc = "Save Current Buffer" })
-map("n", "<leader>qq", "<cmd>:wa<CR> | <cmd>:qall!<CR>", { noremap = true, desc = "Save All and Quit" })
+map("n", "<leader>qq", "<cmd>:wa<CR> | <cmd>:qall!<CR>", { noremap = true, silent = true, desc = "Save All and Quit" })
 
 -- map("n", "qq", "<cmd>:w<CR> |<cmd>:bdelete!<CR>", { noremap = true, desc = "Delete Current Buffer" })
