@@ -11,11 +11,11 @@ return {
     opts.sources = vim.list_extend(opts.sources or {}, {
       -- nls.builtins.formatting.fish_indent,
       -- nls.builtins.diagnostics.fish,
-      -- nls.builtins.formatting.stylua,
+      nls.builtins.formatting.stylua,
       -- nls.builtins.formatting.shfmt,
-      nls.builtins.formatting.prettierd,
-      nls.builtins.code_actions.eslint_d,
-      nls.builtins.diagnostics.eslint_d,
+      nls.builtins.formatting.prettier,
+      nls.builtins.code_actions.eslint,
+      nls.builtins.diagnostics.eslint,
     })
   end,
 }
