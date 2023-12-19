@@ -181,7 +181,9 @@ return {
         --     return vim.loop.cwd()
         --   end,
         -- },
-        html = {},
+        html = {
+          filetypes = { "html", "astro", "handlebars", "hbs" },
+        },
         emmet_language_server = {},
         jsonls = {},
         -- quick_lint_js = {},

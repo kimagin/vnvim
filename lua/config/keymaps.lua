@@ -30,7 +30,7 @@ map("n", "<Tab>", "<cmd>:bn<CR>", { noremap = true, desc = "Move Tabs to right" 
 map("n", "<S-Tab>", "<cmd>:bp<CR>", { noremap = true, desc = "Move Tabs to left" })
 
 -- Telescope
-vim.api.nvim_set_keymap("n", "<leader>fp", "<Cmd>:Telescope projects<CR>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "<leader>fp", "<Cmd>:Telescope projects<CR>", { noremap = true, silent = true })
 
 -- Unregister ciw from the clipboard
 vim.api.nvim_set_keymap("n", "c", '"_c', { noremap = true, silent = true })

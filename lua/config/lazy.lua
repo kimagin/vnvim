@@ -10,8 +10,8 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 -- vim.cmd("autocmd BufNewFile,BufRead *.astro set filetype=astro")
 vim.cmd("nnoremap q <Nop>")
 -- vim.cmd("nnoremap qq <Nop>")
-vim.opt.laststatus = 3
-vim.opt.splitkeep = "screen"
+-- vim.opt.laststatus = 3
+-- vim.opt.splitkeep = "screen"
 
 require("lazy").setup({
   spec = {
