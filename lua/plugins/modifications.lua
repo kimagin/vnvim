@@ -174,7 +174,7 @@ return {
         -- pyright = {},
         -- pylsp = {},
         -- ruff_lsp = {},
-        -- astro = {},
+        astro = {},
         -- tsserver = {
         --   filetypes = { "javascript", "typescript", "typescriptreact", "typescript.tsx" },
         --   root_dir = function()
@@ -191,5 +191,10 @@ return {
         -- emmet_ls = {},
       },
     },
+  },
+  --HACK:Flash
+  {
+    "folke/flash.nvim",
+    --vscode = true,
   },
 }
